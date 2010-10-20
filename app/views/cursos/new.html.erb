@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  $(function(){
+    $("input, textarea, select, button").uniform();
+  });
+</script>
+<%=  javascript 'jquery.uniform' %>
+<%=  stylesheet 'uniform.default' %>
+<% form_for @curso do |f| %>
+  <%= f.label :nome %> <br />
+  <%= f.text_field :nome, :style => "width:300px" %><br />
+  <%= f.label :carreira_id %> <br />
+  <%= f.collection_select(:carreira_id,
+    Carreira.find(:all, :order => :titulo),
+    :id, :titulo, {:prompt => "Selecione"}) %> <br />
+  <%= f.label :descricao %> <br />
+  <%= f.text_area :descricao, :style => "width:300px" %><br />
+
+  <%= f.submit "Salvar" %>
+<%  end %>
+<br />
+<%= link_to "Voltar", cursos_path, :class => "botao" %>

@@ -1,0 +1,34 @@
+#grupo-menu{
+  float:left;
+  width:auto;
+}
+
+#menu .home a{
+  margin:0;
+  border-bottom:4px solid #188E98;
+}
+
+#menu .home a:hover,#menu .home a:active{
+  background:#188E98;
+}
+
+#menu .comunidade a{
+  border-bottom:4px solid #b32680;
+}
+
+#menu .comunidade a:hover,#menu .comunidade .ativo{
+  background:#b32680;
+}
+#menu .beleza a{
+  border-bottom:4px solid #ec008c;
+}
+#menu .beleza a:hover,#menu .beleza .ativo{
+  background:#ec008c;color:#fff;
+}
+.beleza a{
+  color:#ec008c;
+}
+.beleza a:hover{
+  background:#ec008c;
+  color:#fff;
+}

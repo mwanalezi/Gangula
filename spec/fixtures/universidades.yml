@@ -1,0 +1,48 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  abreviatura: MyString
+  endereco: MyString
+  bairro: MyString
+  municipio: 
+  telefone1: MyString
+  telefone2: MyString
+  fax: MyString
+  email: MyString
+  site: MyString
+  descricao: MyText
+
+two:
+  nome: MyString
+  abreviatura: MyString
+  endereco: MyString
+  bairro: MyString
+  municipio: 
+  telefone1: MyString
+  telefone2: MyString
+  fax: MyString
+  email: MyString
+  site: MyString
+  descricao: MyText
+
+# == Schema Information
+#
+# Table name: universidades
+#
+#  id           :integer(4)      not null, primary key
+#  nome         :string(255)
+#  abreviatura  :string(255)
+#  endereco     :string(255)
+#  bairro       :string(255)
+#  municipio_id :integer(4)
+#  telefone1    :string(255)
+#  telefone2    :string(255)
+#  fax          :string(255)
+#  email        :string(255)
+#  site         :string(255)
+#  descricao    :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+

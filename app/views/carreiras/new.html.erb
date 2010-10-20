@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  $(function(){
+    $("input, textarea, select, button").uniform();
+  });
+</script>
+<%=  javascript 'jquery.uniform' %>
+<%=  stylesheet 'uniform.default' %>
+<% form_for @carreira do |f| %>
+  Título<br />
+  <%= f.text_field :titulo, :style => "width:300px" %><br />
+  Descrição<br />
+  <%= f.text_area :descricao, :style => "width:300px", :rows => "10" %><br />
+  <%= f.submit "Salvar" %>
+<%  end %>
+  <br />
+  <%= link_to "Voltar", carreiras_path, :class => "botao" %>

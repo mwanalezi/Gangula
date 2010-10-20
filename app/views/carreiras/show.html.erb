@@ -1,0 +1,27 @@
+<section>
+  <article class="noticias">
+    <header>
+      <h2 class="titulo">
+        <%=h @carreira.titulo %>
+      </h2>
+    </header>
+    <p>
+      <%=h @carreira.descricao %>
+    </p>
+    <h3>
+      Cursos
+    </h3>
+    <% @cursos.each do |curso| %>
+      <%= link_to curso.nome, curso_path(curso) %><br />
+    <% end %>
+    <footer class="meta">
+      <%= link_to 'Editar', edit_carreira_path(@carreira), :class => "botao", :style => "clear:none" %>
+      <%= link_to 'Voltar', carreiras_path, :class => "botao", :style => "clear:none" %>
+    </footer>
+  </article>
+</section>
+
+
+
+
+

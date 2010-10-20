@@ -1,0 +1,17 @@
+%h1 Províncias
+- if @provincias.count == 0
+  %p Nenhuma Província Cadastrada
+- else
+  %ul.listagem
+    - @provincias.each do |provincia|
+      %li
+        %h4
+          = h provincia.nome
+          = link_to "Excluir", provincia, :class => "negative", :confirm => 'Deseja apagar a província?', :method => :delete, :class => "botao", :style => "float:right;clear:none"
+          = link_to "Editar", edit_provincia_path(provincia), :class => "botao", :style => "float:right;clear:none"
+          = link_to "Municípios", provincia_municipios_path(provincia), :class => "botao", :style => "float:right;clear:none"
+          = link_to "Estudar Aqui", provincia_universidades_path(provincia), :class => "botao", :style => "float:right;clear:none"
+
+  = @provincias.count
+  Província
+%p= link_to "Nova Província", new_provincia_path, :class => "positive", :class => "botao"

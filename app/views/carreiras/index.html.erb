@@ -1,0 +1,17 @@
+<h1>Carreiras</h1>
+<% if @carreiras.count == 0 %>
+  <p>Nenhuma Carreira Cadastrada</p>
+<% else  %>
+  <ul class="listagem">
+
+    <% @carreiras.each do |carreira| %>
+      <li>
+        <p><%= link_to carreira.titulo, carreira  %>
+                </p>
+      </li>
+    <% end %>
+  </ul>
+  <%= @carreiras.count%> Carreira
+<% end %>
+
+<p><%= link_to "Nova Carreira", new_carreira_path %></p>

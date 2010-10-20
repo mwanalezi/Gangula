@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  descricao: MyText
+  carreira: 
+
+two:
+  nome: MyString
+  descricao: MyText
+  carreira: 
+
+# == Schema Information
+#
+# Table name: cursos
+#
+#  id          :integer(4)      not null, primary key
+#  nome        :string(255)
+#  descricao   :text
+#  carreira_id :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

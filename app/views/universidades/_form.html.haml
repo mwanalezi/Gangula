@@ -1,0 +1,109 @@
+:javascript
+  $(document).ready(function(){
+      $("select#universidade_provincia_id").change(function(){
+     // alert($(this).val());
+
+          var id_value_string = $(this).val();
+          if (id_value_string == "") {
+              // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
+              $("select#universidade_municipio_id option").remove();
+              var row = "<option value=\"" + "" + "\">" + "" + "";
+              $(row).appendTo("select#universidade_municipio_id");
+          }
+          else {
+              // Send the request and update sub category dropdown
+              $.ajax({
+                  dataType: "json",
+                  cache: false,
+                  url: 'http://localhost:3000/municipios/carrega_municipios/' + id_value_string,
+                  timeout: 4000,
+                  error: function(XMLHttpRequest, errorTextStatus, error){
+                      alert("Failed to submit : "+ errorTextStatus+" ;"+error);
+                  },
+                  success: function(data){
+                      // Clear all options from sub category select
+                      $("select#universidade_municipio_id option").remove();
+                      $.uniform.update("#universidade_municipio_id");
+                      //put in a empty default line
+                      var row = "<option value=\"" + "" + "\">" + "" + "";
+                      $(row).appendTo("select#universidade_municipio_id");
+                      // Fill sub category select
+                      $.each(data, function(i, j){
+                          row = "<option value=\"" + j.municipio.id + "\">" + j.municipio.nome + "</option>";
+                          $(row).appendTo("select#universidade_municipio_id");
+                      });
+                      
+                   }
+              });
+          };
+              });
+  });
+:javascript
+   $(function(){
+        $("input, textarea, select, button").uniform();
+      });
+- javascript 'jquery.uniform'
+- stylesheet 'uniform.default'
+
+- form_for @universidade do |f|
+  %p
+    = f.error_messages
+  .form_universidade
+    %fieldset
+      .campo
+        Nome:
+        %br
+        = f.text_field :nome
+      .campo1
+        Abreviatura/Sigla:
+        %br
+        = f.text_field :abreviatura
+    %fieldset
+      .campo
+        Endereço:
+        %br
+        = f.text_field :endereco
+      .campo1
+        = f.label :bairro
+        %br
+        = f.text_field :bairro
+      %br
+      .campo
+        Província:
+        %br
+        = f.collection_select(:provincia_id, Provincia.all, :id, :nome, {:prompt => ""})
+      .campo1
+        Município/Cidade:
+        %br
+        #municipios
+          = f.collection_select(:municipio_id, Municipio.find_all_by_provincia_id(@universidade.provincia_id) ,:id, :nome, {:prompt => ""})
+      %br
+      .campo
+        Telefone 1:
+        %br
+        = f.text_field :telefone1
+      .campo1
+        Telefone 2:
+        %br
+        = f.text_field :telefone2
+      %br
+      .campo
+        Fax:
+        %br
+        = f.text_field :fax
+      .campo1
+        E-Mail:
+        %br
+        = f.text_field :email
+      %br
+      .campo
+        WebSite:
+        %br
+        = f.text_field :site
+    %fieldset
+      .campofim
+        Descrição:
+        %br
+        = f.text_area :descricao, :cols => 105
+    %p
+      = f.submit "Salvar"

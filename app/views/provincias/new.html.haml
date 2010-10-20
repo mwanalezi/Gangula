@@ -1,0 +1,10 @@
+:javascript
+  $(function(){
+    $("input, textarea, select, button").uniform();
+     });
+- javascript 'jquery.uniform'
+- stylesheet 'uniform.default'
+- form_for @provincia do |f|
+  = f.label :nome
+  = f.text_field :nome, :class => "title"
+  %p= f.submit "Salvar", :class => "botao"
