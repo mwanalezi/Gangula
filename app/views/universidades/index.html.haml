@@ -1,0 +1,21 @@
+%h1 Universidades
+- if @universidades.count == 0
+  %p Nenhuma Universidade Cadastrada
+- else
+  %ul.listagem
+    - @universidades.each do |universidade|
+      %li
+        %h4
+          = h universidade.abreviatura
+          \-
+          = h universidade.nome
+          %br
+          = link_to "Ver Detalhes", universidade, :class => "botao"
+          = link_to "Excluir", universidade, :class => "negative", :confirm => 'Deseja apagar a universidade?', :method => :delete, :class => "botao", :style => "clear:none"
+          = link_to "Editar", edit_universidade_path(universidade), :class => "botao", :style => "clear:none"
+  = @universidades.count
+  Universidade
+%p= link_to "Nova Universidade", new_universidade_path, :class => "botao"
+
+
+

@@ -1,0 +1,22 @@
+require 'autotest/growl' 
+require 'snarl'
+require 'lib/autotest/growl-to-snarl'
+require 'autotest/restart' # optional: forces autotest to pick the changes to this file
+require 'autotest/timestamp' # optional: shows timestamps for test runs
+require 'redgreen/autotest'
+
+
+# filter out VCS files and other garbage to reduce HDD usage
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .svn .hg .opts .DS_Store ._* vendor tmp log doc nbproject lib config README Rakefile .autotest autotest-all.html autotest.html}.each do |exception|
+    autotest.add_exception(exception)
+  end
+end
+
+# do not clear console before running tests
+Autotest::Growl::clear_terminal = false
+#mostra arquivos modificados
+Autotest::Growl::show_modified_files = true
+
+
+

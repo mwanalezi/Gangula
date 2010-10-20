@@ -1,0 +1,41 @@
+.dado
+  %p
+    %strong.alt.dado
+      =h @universidade.abreviatura 
+      =h @universidade.nome
+  %p
+    %strong Endereco:
+    =h @universidade.endereco
+  %p
+    %strong Bairro:
+    =h @universidade.bairro
+  %p
+    %strong Província:
+    =h @universidade.provincia.nome
+  %p
+    %strong Municipio:
+    =h @universidade.municipio.nome
+  %p
+    %strong Telefone(s):
+    =h @universidade.telefone1
+    ,
+    =h @universidade.telefone2
+  %p
+    %strong Fax:
+    =h @universidade.fax
+  %p
+    %strong Email:
+    =h @universidade.email
+  %p
+    %strong Site:
+    =h @universidade.site
+  %p
+    %strong Descriçao:
+    =h @universidade.descricao
+  %hr
+  %p
+    = link_to "Editar", edit_universidade_path(@universidade), :class => "botao", :style => "clear:none"
+   
+    = link_to "Excluir", @universidade, :confirm => 'Deseja Excluir a Universidade?', :method => :delete, :class => "botao", :style => "clear:none"
+    
+    = link_to "Lista de  Universidades", universidades_path, :class => "botao", :style => "clear:none"

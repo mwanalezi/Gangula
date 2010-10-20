@@ -1,0 +1,109 @@
+  [4;36;1mSQL (391.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (54.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+Rendering provincias/index
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+Rendering provincia/index
+  [4;35;1mSQL (2.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+Rendering municipios/update
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+Rendering municipios/new
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+Rendering municipios/index
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+Rendering municipios/destroy
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+Rendering municipios/creade
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+Rendering carreiras/index
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProvincia Columns (786.0ms)[0m   [0mSHOW FIELDS FROM `provincias`[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mProvincia Load (163.0ms)[0m   [0mSELECT `provincias`.id FROM `provincias` WHERE (`provincias`.`nome` = BINARY 'value for nome') LIMIT 1[0m
+  [4;36;1mProvincia Create (168.0ms)[0m   [0;1mINSERT INTO `provincias` (`created_at`, `nome`, `updated_at`) VALUES('2010-09-20 02:18:56', 'value for nome', '2010-09-20 02:18:56')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (234.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMunicipio Columns (52.0ms)[0m   [0;1mSHOW FIELDS FROM `municipios`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMunicipio Create (19.0ms)[0m   [0;1mINSERT INTO `municipios` (`created_at`, `nome`, `updated_at`, `provincia_id`) VALUES('2010-09-20 02:18:56', 'value for nome', '2010-09-20 02:18:56', 1)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (42.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mCarreira Columns (54.0ms)[0m   [0;1mSHOW FIELDS FROM `carreiras`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCarreira Create (21.0ms)[0m   [0;1mINSERT INTO `carreiras` (`created_at`, `titulo`, `updated_at`, `descricao`) VALUES('2010-09-20 02:18:56', 'value for titulo', '2010-09-20 02:18:56', 'value for descricao')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (36.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing ProvinciasController#index (for 0.0.0.0 at 2010-09-19 23:18:56) [GET]
+  [4;36;1mProvincia Load (8.0ms)[0m   [0;1mSELECT * FROM `provincias` [0m
+Rendering template within layouts/application
+Rendering provincias/index
+Completed in 14ms (View: 1, DB: 1623) | 200 OK [http://test.host/provincias]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MunicipiosController#update (for 0.0.0.0 at 2010-09-19 23:18:56) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MunicipiosController#destroy (for 0.0.0.0 at 2010-09-19 23:18:56) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MunicipiosController#creade (for 0.0.0.0 at 2010-09-19 23:18:56) [GET]
+Rendering template within layouts/application
+Rendering municipios/creade
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MunicipiosController#new (for 0.0.0.0 at 2010-09-19 23:18:56) [GET]
+Rendering template within layouts/application
+Rendering municipios/new
+Completed in 2ms (View: 2, DB: 1) | 200 OK [http://test.host/municipios/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MunicipiosController#index (for 0.0.0.0 at 2010-09-19 23:18:56) [GET]
+  [4;35;1mMunicipio Load (0.0ms)[0m   [0mSELECT * FROM `municipios` [0m
+Rendering template within layouts/application
+Rendering municipios/index
+Completed in 3ms (View: 1, DB: 3) | 200 OK [http://test.host/municipios]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing CarreirasController#index (for 0.0.0.0 at 2010-09-19 23:18:56) [GET]
+  [4;36;1mCarreira Load (1.0ms)[0m   [0;1mSELECT * FROM `carreiras` [0m
+Rendering template within layouts/application
+Rendering carreiras/index
+Completed in 6ms (View: 1, DB: 1) | 200 OK [http://test.host/carreiras]
+  [4;35;1mSQL (2.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m

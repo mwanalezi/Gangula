@@ -1,0 +1,21 @@
+<h1><%= @provincia.nome%>-Municípios</h1>
+
+<% if @municipios.blank? %>
+  <p>Nenhum Município Cadastrado</p>
+<% else  %>
+  <ul class="listagem">
+
+    <% @municipios.each do |municipio| %>
+      <li>
+        <p><%= h municipio.nome  %>
+          <%= link_to "Excluir", [@provincia, municipio], :confirm => 'Deseja apagar a município?', :method => :delete  %>
+          <%= link_to "Editar", [:edit, @provincia, municipio] %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+  <%= @municipios.count%> Município
+<% end %>
+
+  <p><%= link_to "Novo Município", new_provincia_municipio_path %> &nbsp;&nbsp;
+<%= link_to "Voltar Para Províncias", provincias_path %> </p>

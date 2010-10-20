@@ -1,0 +1,6 @@
+<% form_for [@provincia, @municipio] do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :nome %>
+  <%= f.text_field :nome %><br />
+  <%= f.submit "Salvar" %>
+<%  end %>

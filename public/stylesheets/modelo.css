@@ -1,0 +1,118 @@
+body{
+  color: #000;
+  background: #000;
+ /* font-weight: bold;
+ text-shadow: 1px 1px 1px #fff;*/
+}
+
+.container{
+  background: #ccc;
+}
+
+#tags{
+  background: #FF7E00;
+}
+
+#noticias{
+  background: #188E98;
+}
+
+#atualizacoes{
+  background: #005CA3;
+}
+
+a.botao {
+  clear: both;
+  display:block;
+  float:left;
+  padding:5px;
+  margin:0 10px 10px 0;
+  background:#E9E9E9;
+  border:1px solid #999999;
+  text-decoration: none !important;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size:16px;
+  line-height:16px;
+  text-align:center;
+  color:#000066;
+}
+
+a.botao:hover {
+  color:#FFFFFF;
+  background:#999999;
+
+}
+
+.listagem{
+
+}
+.listagem li{
+  clear:left;
+}
+a {
+  text-decoration: none;
+}
+
+#menu li {
+  padding-bottom: 5px;
+}
+
+
+
+#menu li a{
+  padding-bottom: 3px;
+}
+#menu .home a{
+  margin:0;
+  border-bottom:4px solid #188E98;
+  text-decoration: none;
+}
+
+#menu .home a:hover,#menu .home a:active{
+  background:#188E98;
+}
+
+#menu .provincias a{
+  margin:0;
+  border-bottom:4px solid #b32680;
+  text-decoration: none;
+}
+
+#menu .provincias a:hover,#menu .provincias a:active{
+  background:#b32680;
+}
+
+#menu .cursos a{
+  margin:0;
+  border-bottom:4px solid #ec008c;
+  text-decoration: none;
+}
+
+#menu .cursos a:hover,#menu .cursos a:active{
+  background:#ec008c;
+}
+
+#menu .universidades a{
+  margin:0;
+  border-bottom:4px solid #005CAA;
+  text-decoration: none;
+}
+
+#menu .universidades a:hover{
+  background:#005CAA;
+}
+
+#menu .universidades .active {
+  background:#005CA3;
+}
+
+#menu .carreiras a{
+  margin:0;
+  border-bottom:4px solid #FF7E00;;
+  text-decoration: none;
+}
+
+#menu .carreiras a:hover,#menu .carreiras a:active{
+  background:#FF7E00;;
+}
+

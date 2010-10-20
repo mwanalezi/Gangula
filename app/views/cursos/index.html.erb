@@ -1,0 +1,17 @@
+<h1>Cursos</h1>
+<% if @cursos.count == 0 %>
+  <p>Nenhum Curso Cadastrado</p>
+<% else  %>
+  <ul class="listagem">
+
+    <% @cursos.each do |curso| %>
+      <li>
+        <p><%= link_to curso.nome, curso  %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+  <%= @cursos.count%> Curso
+<% end %>
+
+<p><%= link_to "Novo Curso", new_curso_path, :class => "botao" %></p>

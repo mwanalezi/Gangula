@@ -1,0 +1,121 @@
+!!! 5
+ 
+%html
+  %head
+    /[if lt IE 9]
+      %script{:type => "text/javascript", :src  => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+  
+    %title= @meta_title
+    %meta{:content => @meta_keywords, :name => "keywords"}
+    %meta{:content => @meta_descriptio, :name => "description"}
+    %meta{:content => "Osvaldo Artur Júnior Mwanalezi", :name => "author"}
+    = stylesheet_link_tag 'compiled/estilo.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'compiled/print.css', :media => 'print'
+    /[if IE]
+      = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'modelo.css', :media => 'screen, projection'
+    /= javascript_include_tag "jquery-ui-min"
+    = javascript_include_tag "jquery"
+    = javascript_include_tag "activemenu"
+    /= javascript_include_tag "jrails"
+    
+    = yield(:head)
+    :javascript
+      $(document).ready(function() {
+             $('.flash_messages').fadeIn('slow')
+            .animate({opacity: 1.0}, 3000)
+            .fadeOut('slow', function() {
+                $(this).remove();
+            });
+        
+        });
+    
+  %body.bp
+    .container
+      #header.span-24.last
+        %h1#book_haven
+          Gangula
+      %hr
+      #subheader.span-24.last
+        %nav
+          %ul#menu
+            %li.home
+              =link_to "PRINCIPAL", :controller => 'principal'
+            %li.provincias
+              =link_to "PROVÍNCIAS", :controller => 'provincias'
+            %li.cursos
+              =link_to "CURSOS", :controller => 'cursos'
+            %li.carreiras
+              =link_to "CARREIRAS", :controller => 'carreiras'
+            %li.universidades
+              =link_to "UNIVERSIDADES", :controller => 'universidades'
+         
+        
+      %hr
+      =flash_message
+      #content.span-17.colborder
+        =yield
+        %br
+        %hr/
+        .span-5.colborder#tags
+          %h4.prepend-4 Tags
+          %p
+            Nam vit
+        .span-5.colborder#noticias
+          %h4.prepend-3 Notícias
+          %p
+            Nam vitae tortor id ante sodales facilisis. Mauris ipsum. Donec mi pede, accumsan et, 
+        .span-5.last#atualizacoes
+          %h4.prepend-2 Atualizações
+          %p
+            Nam vitae tortor id ante sodales facilisis. Mauris ipsum.
+            %br
+              Donec mi pede, accumsan et, egestas viverra, aliquam a, augue. In id lectus.
+          
+      #sidebar.span-6.last
+        #recent-books
+          %h3.caps
+            Centros de ensino
+          .box
+            %a.quiet{:href => "#"} Hygiene
+            .quiet Nov. 29, 2008
+            .quiet by Craven
+          .box
+            %a.quiet{:href => "#"} How to Get What You Want
+            .quiet Nov. 30, 2008
+            .quiet by Thor
+        #recent-reviews.prepend-top
+          %h3.caps
+            Carreiras
+          .box
+            %ul
+              - @carreiras_side.each do |c|
+                %li
+                  = link_to c.titulo, c
+                  
+        .box
+          %span.quiet
+            Milton Mail reviewed It All Begins at Midnight
+          .quiet Rating: 5/5
+          %a.quiet{:href => "#"} Read this review
+      %hr/
+      #footer
+        .span-5.colborder
+          %ul
+            %li
+              %a.quiet{:href => "#"} Blog
+              %li
+                %a.quiet{:href => "#"} Sobre nós
+              %li
+                %a.quiet{:href => "#"} NaCiti
+              %li
+                %a.quiet{:href => "#"} Contacto
+              %li
+                %a.quiet{:href => "#"} Registre-se!
+        .prepend-top.push-3.span-8.last
+          %span.quiet
+            Copyright © 2010 - Osvaldo Artur Júnior "Mwanalezi"
+            |
+            %a.quiet{:href => "#"} Política de Privacidade
+            
